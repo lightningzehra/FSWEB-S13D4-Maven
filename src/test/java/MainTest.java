@@ -84,9 +84,9 @@ public class MainTest {
     @DisplayName("HealthPercentage metodu doğru çalışıyor mu ?")
     @Test
     public void testHealthPercentage() {
-        assertEquals(player.healthRemaining(), 100);
+        assertEquals(player.healthPercentage(), 100);
         player.loseHealth(20);
-        assertEquals(player.healthRemaining(), 80);
+        assertEquals(player.healthPercentage(), 80);
     }
 
     @DisplayName("loseHealth metodu doğru çalışıyor mu ?")
@@ -94,9 +94,9 @@ public class MainTest {
     public void testLoseHealth() {
         player.loseHealth(20);
         player.loseHealth(20);
-        assertEquals(player.healthRemaining(), 60);
+        assertEquals(player.healthPercentage(), 60);
         player.loseHealth(80);
-        assertEquals(player.healthRemaining(), 0);
+        assertEquals(player.healthPercentage(), 0);
     }
 
     @DisplayName("restoreHealth metodu doğru çalışıyor mu ?")
@@ -104,8 +104,8 @@ public class MainTest {
     public void testRestoreHealth() {
         player.loseHealth(20);
         player.restoreHealth(10);
-        assertEquals(player.healthRemaining(), 90);
+        assertEquals(player.healthPercentage(), 90);
         player.restoreHealth(20);
-        assertEquals(player.healthRemaining(), 100);
+        assertEquals(player.healthPercentage(), 100);
     }
 }
